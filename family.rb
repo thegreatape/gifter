@@ -32,7 +32,7 @@ class Family
     puts "storing assignments in redis: #{ENV['REDISTOGO_URL']}"
     redis = redis_client
     redis.hmset 'assignments', assignments.to_a.flatten
-    redis.set 'generated_at', Time.now.stamp("October 1st")
+    redis.set 'generated_at', Time.now.stamp("October 1")
   end
 
   def self.redis_client
