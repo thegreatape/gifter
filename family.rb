@@ -29,9 +29,16 @@ class Family
       end
     end
 
-    redis = Redis.new
+    puts "storing assignments in redis: #{ENV['REDISTOGO_URL']}"
+    redis = redis_client
     redis.hmset 'assignments', assignments.to_a.flatten
     redis.set 'generated_at', Time.now.stamp("Jan 1 at 01:00 AM")
+  end
+
+  def self.redis_client
+    ENV['REDISTOGO_URL'] ||= 'redis://127.0.0.1:6379'
+    uri = URI.parse(ENV['REDISTOGO_URL'])
+    Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
   end
 
 end
