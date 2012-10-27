@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %link{rel: 'stylesheet', href: '/bootstrap/css/bootstrap.min.css'}
+    :css
+      .generated-on {color: #999;}
+
+
+    %title Whitmore Family Christmas Gift Assigments
+%body
+  .container
+    .page-header
+      %h1 Whitmore Family Christmas Gift Assigments
+
+    %table.table
+      %thead
+        %tr
+          %th Giver
+          %th Recipient
+      %tbody
+        - family_members.each do |giver, recipient|
+          %tr
+            %td= giver
+            %td= recipient
+
+    %p.generated-on Generated on #{generated_at}
