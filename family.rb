@@ -1,19 +1,26 @@
 require 'redis'
+require 'uri'
 require 'stamp'
 
 class Family
   def self.members
     [ ['Mattie',
        'Kriddie',
-       'Katherine / Scriba'],
+       'Katherine',
+       'Scriba'],
 
-      ['Claire / Josh',
-       'Samuel / Jordan',
+      ['Claire',
+       'Josh',
+       'Samuel',
+       'Jordan',
        'Sarabeth',
-       'Carol / Frank'],
+       'Carol',
+       'Frank'],
 
-       ['John / Sharon',
-        'Thomas / Elizabeth',
+       ['John',
+        'Sharon',
+        'Thomas',
+        'Elizabeth',
         'Mollie'],
 
         ['Linda'] ]
